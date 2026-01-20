@@ -1,0 +1,26 @@
+{
+  "name": "26-data-entry-form",
+  "version": "1.0.0",
+  "description": "![Screenshot](data-ss.png)",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-knight23/26-data-entry-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mk-knight23/26-data-entry-form/issues"
+  },
+  "homepage": "https://github.com/mk-knight23/26-data-entry-form#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
