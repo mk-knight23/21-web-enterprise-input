@@ -1,22 +1,26 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    --color-indigo: #4f46e5;
+  --color-indigo: #4f46e5;
 }
 
 @layer base {
-    body {
-        @apply bg-[#f8fafc] text-slate-900 antialiased selection:bg-indigo/30;
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    }
+  body {
+    @apply bg-[#f8fafc] text-slate-900 antialiased selection:bg-indigo/30;
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
 }
 
 @layer components {
-    .label-text {
-        @apply block text-[10px] font-black uppercase text-slate-400 tracking-[0.2em] mb-2.5;
-    }
+  .label-text {
+    @apply block text-[10px] font-black uppercase text-slate-400 tracking-[0.2em] mb-2.5;
+  }
 
-    .input-glow {
-        @apply transition-all duration-300 focus:ring-4 focus:ring-indigo/10 focus:border-indigo outline-none;
-    }
+  .input-glow {
+    @apply transition-all duration-300 focus:ring-4 focus:ring-indigo/10 focus:border-indigo outline-none;
+  }
 }

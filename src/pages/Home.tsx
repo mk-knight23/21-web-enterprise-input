@@ -60,7 +60,8 @@ export default function Home() {
         return undefined;
 
       case 'phone':
-        if (value && !/^\d{10,}$/.test(value.replace(/\D/g, ''))) return 'At least 10 digits required';
+        if (value && !/^\d{10,}$/.test(value.replace(/\D/g, '')))
+          return 'At least 10 digits required';
         return undefined;
 
       case 'location':
@@ -74,26 +75,26 @@ export default function Home() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData(prev => ({ ...prev, [name]: value }));
 
     if (touched[name]) {
       const error = validateField(name as keyof FormData, value);
-      setErrors((prev) => ({ ...prev, [name]: error }));
+      setErrors(prev => ({ ...prev, [name]: error }));
     }
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setTouched((prev) => ({ ...prev, [name]: true }));
+    setTouched(prev => ({ ...prev, [name]: true }));
     const error = validateField(name as keyof FormData, value);
-    setErrors((prev) => ({ ...prev, [name]: error }));
+    setErrors(prev => ({ ...prev, [name]: error }));
   };
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
     let isValid = true;
 
-    (Object.keys(formData) as Array<keyof FormData>).forEach((key) => {
+    (Object.keys(formData) as Array<keyof FormData>).forEach(key => {
       const error = validateField(key, formData[key]);
       if (error) {
         newErrors[key] = error;
@@ -148,7 +149,11 @@ export default function Home() {
           </div>
           <h2 className="text-2xl font-bold text-slate-900 mb-3">Registration Successful!</h2>
           <p className="text-slate-600 mb-8">
-            Employee <strong>{formData.firstName} {formData.lastName}</strong> has been registered successfully.
+            Employee{' '}
+            <strong>
+              {formData.firstName} {formData.lastName}
+            </strong>{' '}
+            has been registered successfully.
           </p>
           <button
             onClick={handleClear}
@@ -164,9 +169,10 @@ export default function Home() {
   const inputClasses = (fieldName: keyof FormData) => `
     w-full px-4 py-3 bg-white border-2 rounded-xl text-slate-900 placeholder-slate-400
     transition-all duration-200 outline-none
-    ${errors[fieldName] && touched[fieldName]
-      ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-100'
-      : 'border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100'
+    ${
+      errors[fieldName] && touched[fieldName]
+        ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-100'
+        : 'border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100'
     }
   `;
 
@@ -196,7 +202,9 @@ export default function Home() {
               placeholder="John"
               className={inputClasses('firstName')}
               aria-invalid={!!errors.firstName && touched.firstName}
-              aria-describedby={errors.firstName && touched.firstName ? 'firstName-error' : undefined}
+              aria-describedby={
+                errors.firstName && touched.firstName ? 'firstName-error' : undefined
+              }
             />
             {errors.firstName && touched.firstName && (
               <p id="firstName-error" className="mt-2 text-sm text-red-500 font-medium">
@@ -274,7 +282,9 @@ export default function Home() {
             placeholder="EMP-001"
             className={inputClasses('employeeId')}
             aria-invalid={!!errors.employeeId && touched.employeeId}
-            aria-describedby={errors.employeeId && touched.employeeId ? 'employeeId-error' : undefined}
+            aria-describedby={
+              errors.employeeId && touched.employeeId ? 'employeeId-error' : undefined
+            }
           />
           {errors.employeeId && touched.employeeId && (
             <p id="employeeId-error" className="mt-2 text-sm text-red-500 font-medium">
