@@ -1,0 +1,5 @@
+[build]
+  publish = "."
+  command = "echo 'Static site ready'"
+[build.environment]
+  NODE_VERSION = "20"

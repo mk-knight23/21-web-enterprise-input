@@ -1,0 +1,1 @@
+{"version": 2, "name": "evolved-project", "builds": [{"src": "package.json", "use": "@vercel/static-build"}], "routes": [{"src": "/(.*)", "dest": "/$1"}]}
