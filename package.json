@@ -5,6 +5,7 @@
   "description": "Enterprise precision data entry portal modernized with React 19, Vite 6, and Tailwind CSS v4.",
   "type": "module",
   "scripts": {
+    "production": "npm run build && npm start",
     "lint": "eslint .",
     "dev": "vite",
     "build": "tsc && vite build",
